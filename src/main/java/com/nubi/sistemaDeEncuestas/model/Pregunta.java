@@ -1,5 +1,7 @@
 package com.nubi.sistemaDeEncuestas.model;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -20,10 +22,16 @@ public class Pregunta {
 	
 	private String titulo;
 	private String cuerpo;
+	private Date fechaYHora;
 	
 	@ManyToOne
-	@JoinColumn(name = "usuario", referencedColumnName = "id")
+	@JoinColumn(name = "usuarios", referencedColumnName = "id")
 	private Usuario usuario;
+	
+	@ManyToOne
+	@JoinColumn(name = "encuestas", referencedColumnName = "id")
+	private Encuesta encuesta;
+	
 	
 	
 	public Pregunta() {

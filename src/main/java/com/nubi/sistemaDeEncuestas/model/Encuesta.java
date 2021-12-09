@@ -1,6 +1,7 @@
 package com.nubi.sistemaDeEncuestas.model;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -19,8 +20,6 @@ public class Encuesta {
 	private Long id;
 	
 	private Date fechaCreación;
-	private Pregunta pregunta;
-	private String respuesta;
 	
 	public Encuesta() {
 		
