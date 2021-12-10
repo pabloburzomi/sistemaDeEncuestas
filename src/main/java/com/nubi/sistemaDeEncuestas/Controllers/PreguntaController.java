@@ -1,9 +1,13 @@
 package com.nubi.sistemaDeEncuestas.Controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.nubi.sistemaDeEncuestas.model.Pregunta;
+import com.nubi.sistemaDeEncuestas.model.Usuario;
 import com.nubi.sistemaDeEncuestas.services.Implementacion.PreguntaServiceImpl;
 
 @RestController
@@ -12,5 +16,9 @@ public class PreguntaController {
 	
 	@Autowired
 	private PreguntaServiceImpl ps;
+	
+	public List<Pregunta> getPreguntasUsuario(Usuario u){
+		return ps.getPreguntaByUsuario(u);
+	}
 
 }

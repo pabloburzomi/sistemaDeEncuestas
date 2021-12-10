@@ -12,4 +12,6 @@ public class RespuestaController {
 
 	@Autowired
 	private RespuestaServiceImpl rs;
+	
+	
 }
