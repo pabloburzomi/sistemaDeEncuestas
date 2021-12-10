@@ -30,7 +30,7 @@ public class RespuestaRepoImpl {
 		
 		List<Respuesta> resBD = new ArrayList<>();
 		
-		Query query = em.createQuery("select r from respuestas where r.preguntas = :id");
+		Query query = em.createQuery("select r from Respuesta r where r.preguntas = :id");
 		
 		query.setParameter("id", idPregunta);
 		

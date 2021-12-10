@@ -17,6 +17,7 @@ public class RespuestaServiceImpl implements RespuestaService{
 
 	@Override
 	public void addNewRespuesta(Respuesta r) {
+		
 		List<Respuesta> listaRespuestas= pr.findRespuestasByIdPreg(r.getPregunta().getId());
 			
 		if(listaRespuestas.size() < 5) {
