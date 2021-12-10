@@ -49,6 +49,5 @@ public class Pregunta {
 		this.usuario = usuario;
 		this.encuesta = encuesta;
 	}
-	
 
 }

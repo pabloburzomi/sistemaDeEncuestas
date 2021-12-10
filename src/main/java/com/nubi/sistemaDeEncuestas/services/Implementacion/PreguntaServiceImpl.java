@@ -13,34 +13,19 @@ import com.nubi.sistemaDeEncuestas.repositories.Implementacion.PreguntaRepoImpl;
 import com.nubi.sistemaDeEncuestas.services.PreguntaService;
 
 @Service
-public class PreguntaServiceImpl implements PreguntaService{
-	
+public class PreguntaServiceImpl implements PreguntaService {
+
 	@Autowired
 	private PreguntaRepoImpl pr;
-	
-	@Autowired
-	private EncuestaRepoImpl er;
-	
-	
+
 	@Override
 	public void addNewPregunta(Pregunta p) {
-		
-		//Si no existe la encuesta la crea
-		if( er.findById(p.getEncuesta().getId()) == null ) {
-		
-			Encuesta e = new Encuesta();
-			er.guardarEncuesta(e);
-			pr.addNewPregunta(p);
-		}
-		
-		else {
-			pr.addNewPregunta(p);
-		}
+		pr.addNewPregunta(p);
 	}
 
 	@Override
 	public List<Pregunta> getPreguntaByUsuario(Usuario u) {
 		return pr.listaPreguntasByUsuario(u);
 	}
+	
 }
-

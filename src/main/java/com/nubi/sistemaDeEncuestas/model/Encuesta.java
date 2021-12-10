@@ -35,5 +35,4 @@ public class Encuesta {
 		this.fechaCreación = new Date(Instant.now().toEpochMilli());
 	}
 
-
 }

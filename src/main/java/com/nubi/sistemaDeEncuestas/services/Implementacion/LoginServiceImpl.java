@@ -14,8 +14,7 @@ public class LoginServiceImpl implements LoginService{
 	private LoginRepoImpl lr;
 
 	@Override
-	public boolean findLogin(Login login) {
-		
+	public boolean findLogin(Login login) {	
 		return false;
 	}
 

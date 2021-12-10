@@ -17,22 +17,15 @@ public class RespuestaServiceImpl implements RespuestaService{
 
 	@Override
 	public void addNewRespuesta(Respuesta r) {
-		// TODO Auto-generated method stub
+		List<Respuesta> listaRespuestas= pr.findRespuestasByIdPreg(r.getPregunta().getId());
+			
+		if(listaRespuestas.size() < 5) {
+		pr.addNewRespuesta(r);
+		}
+		else {
+			System.err.print("No se permiten mas de 4 respuestas para una pregunta");
+		}
 		
 	}
-
-//	@Override
-//	public void addNewRespuesta(Respuesta r) {
-//		
-//		List<Respuesta> listaRespuestas = pr.findRespuestasByPreg(r.getPregunta().getId());
-//		
-//		if(listaRespuestas.size() < 5) {
-//			pr.addNewRespuesta(r);
-//		} 
-//		else {
-//			System.err.println("No se permiten más de 4 respuestas por pregunta");
-//		}
-//		
-//	}
 
 }
