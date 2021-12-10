@@ -3,6 +3,7 @@ package com.nubi.sistemaDeEncuestas.Controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -26,6 +27,11 @@ public class EncuestaController {
 	@RequestMapping(path = "/newEncuesta", method = RequestMethod.POST)
 	private void newEncuesta(@RequestBody Encuesta encuesta) {
 		es.addNewEncuesta(encuesta);
+	}
+	
+	@RequestMapping(path = "/etiqueta/{id}")
+	private List<Encuesta> getEncuestaByEtiqueta(@PathVariable String id){
+		return es.getEncuestaByEtiqueta(id);
 	}
 
 }
