@@ -6,10 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.nubi.sistemaDeEncuestas.model.Encuesta;
-import com.nubi.sistemaDeEncuestas.repositories.EncuestaRepository;
 import com.nubi.sistemaDeEncuestas.repositories.Implementacion.EncuestaRepoImpl;
 import com.nubi.sistemaDeEncuestas.services.EncuestaService;
-
 
 @Service
 public class EncuestaServiceImpl implements EncuestaService {

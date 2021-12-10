@@ -1,12 +1,13 @@
 package com.nubi.sistemaDeEncuestas.repositories.Implementacion;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import com.nubi.sistemaDeEncuestas.model.Login;
-import com.nubi.sistemaDeEncuestas.model.Usuario;
 import com.nubi.sistemaDeEncuestas.repositories.LoginRepository;
 
-public class LoginRepositoryImpl{
+@Repository
+public class LoginRepoImpl{
 	
 	@Autowired
 	private LoginRepository lr;

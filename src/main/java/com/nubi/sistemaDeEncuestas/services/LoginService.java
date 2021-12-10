@@ -1,10 +1,10 @@
 package com.nubi.sistemaDeEncuestas.services;
 
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
 import com.nubi.sistemaDeEncuestas.model.Login;
 
-@Repository
+@Service
 public interface LoginService {
 	
 	public boolean findLogin(Login login);

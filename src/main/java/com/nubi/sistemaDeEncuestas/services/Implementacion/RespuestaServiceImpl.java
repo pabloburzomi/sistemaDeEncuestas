@@ -6,27 +6,33 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.nubi.sistemaDeEncuestas.model.Respuesta;
-import com.nubi.sistemaDeEncuestas.repositories.Implementacion.RespuestaRepositoryImpl;
+import com.nubi.sistemaDeEncuestas.repositories.Implementacion.RespuestaRepoImpl;
 import com.nubi.sistemaDeEncuestas.services.RespuestaService;
 
 @Service
 public class RespuestaServiceImpl implements RespuestaService{
 	
 	@Autowired
-	private RespuestaRepositoryImpl pr;
+	private RespuestaRepoImpl pr;
 
 	@Override
 	public void addNewRespuesta(Respuesta r) {
-		
-		List<Respuesta> listaRespuestas = pr.findRespuestasByPreg(r.getPregunta().getId());
-		
-		if(listaRespuestas.size() < 5) {
-			pr.addNewRespuesta(r);
-		} 
-		else {
-			System.err.println("No se permiten más de 4 respuestas por pregunta");
-		}
+		// TODO Auto-generated method stub
 		
 	}
+
+//	@Override
+//	public void addNewRespuesta(Respuesta r) {
+//		
+//		List<Respuesta> listaRespuestas = pr.findRespuestasByPreg(r.getPregunta().getId());
+//		
+//		if(listaRespuestas.size() < 5) {
+//			pr.addNewRespuesta(r);
+//		} 
+//		else {
+//			System.err.println("No se permiten más de 4 respuestas por pregunta");
+//		}
+//		
+//	}
 
 }

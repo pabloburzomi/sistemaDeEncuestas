@@ -9,7 +9,7 @@ import com.nubi.sistemaDeEncuestas.model.Respuesta;
 import com.nubi.sistemaDeEncuestas.repositories.RespuestaRepository;
 
 @Repository
-public class RespuestaRepositoryImpl {
+public class RespuestaRepoImpl {
 	
 	@Autowired
 	private RespuestaRepository rr;
@@ -18,8 +18,8 @@ public class RespuestaRepositoryImpl {
 		rr.save(r);
 	}
 	
-	public List<Respuesta> findRespuestasByPreg(Long idPregunta){
-		return rr.getRespuestas(idPregunta);
-	}
+//	public List<Respuesta> findRespuestasByPreg(Long idPregunta){
+//		return rr.getRespuestas(idPregunta);
+//	}
 
 }
