@@ -23,8 +23,9 @@ public class PreguntaServiceImpl implements PreguntaService {
 		pr.addNewPregunta(p);
 	}
 
+	//Devuelve todas las preguntas de un usuario particular
 	@Override
-	public List<Pregunta> getPreguntaByUsuario(Usuario u) {
+	public List<Pregunta> getPreguntaByUsuario(Long u) {
 		return pr.listaPreguntasByUsuario(u);
 	}
 	

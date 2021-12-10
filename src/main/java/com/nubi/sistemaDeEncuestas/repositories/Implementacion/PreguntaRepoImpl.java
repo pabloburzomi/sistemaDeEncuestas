@@ -19,8 +19,8 @@ public class PreguntaRepoImpl{
 		pr.save(p);
 	}
 	
-	public List<Pregunta> listaPreguntasByUsuario(Usuario u){
-		return pr.findAllByUsuario(u.getId());
+	public List<Pregunta> listaPreguntasByUsuario(Long u){
+		return pr.findAllByUsuario(u);
 	}
 	
 }

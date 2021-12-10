@@ -12,6 +12,6 @@ public interface PreguntaService {
 	
 	public void addNewPregunta(Pregunta p);
 	
-	public List<Pregunta> getPreguntaByUsuario(Usuario u);
+	public List<Pregunta> getPreguntaByUsuario(Long u);
 
 }
