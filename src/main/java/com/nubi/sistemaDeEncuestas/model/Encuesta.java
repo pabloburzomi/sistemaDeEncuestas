@@ -28,6 +28,8 @@ public class Encuesta {
 	@Column(nullable = false)
 	private Date fechaCreación;
 	
+	private Etiqueta etiqueta;
+	
 	@Transient
 	private List<Pregunta> listaPreguntas;
 	

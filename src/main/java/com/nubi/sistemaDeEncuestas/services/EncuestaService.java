@@ -13,5 +13,6 @@ public interface EncuestaService{
 	
 	public List<Encuesta> getAllEncuestas();
 	
-
+	public List<Encuesta> getEncuestaByEtiqueta(String etiqueta);
+	
 }

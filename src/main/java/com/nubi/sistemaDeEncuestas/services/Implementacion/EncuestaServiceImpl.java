@@ -12,23 +12,27 @@ import com.nubi.sistemaDeEncuestas.services.EncuestaService;
 
 @Service
 public class EncuestaServiceImpl implements EncuestaService {
-	
+
 	@Autowired
 	private EncuestaRepoImpl er;
-	
+
 	@Autowired
 	private PreguntaRepoImpl pr;
-	
-	public Encuesta findEncuestaById(Long id) {
-		return er.findById(id);
-	}
 
+	// Guarda una nueva encuesta
 	@Override
 	public void addNewEncuesta(Encuesta e) {
 		e.getListaPreguntas().forEach(System.out::println);
 		er.guardarEncuesta(e);
 	}
+	
+	//Agrupa las encuestas por etiquetas
+	@Override
+	public List<Encuesta> getEncuestaByEtiqueta(String etiqueta) {
+		return er.findByEtiqueta(etiqueta);
+	}
 
+	//Devuelve todas las encuestas
 	@Override
 	public List<Encuesta> getAllEncuestas() {
 		return er.findAllEncuestas();
