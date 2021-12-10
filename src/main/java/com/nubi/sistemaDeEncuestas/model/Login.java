@@ -1,7 +1,13 @@
 package com.nubi.sistemaDeEncuestas.model;
 
+import java.sql.Date;
+import java.time.Instant;
+import java.util.Calendar;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 import org.springframework.data.annotation.Id;
 
@@ -10,13 +16,24 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@Entity
 public class Login {
 	
-	@Id
 	private String username;
 	
-	@Column(name = "password", nullable = false, length = 12)
 	private String password;
+	
+	private Date fechaYHora;
+	
+	public Login() {
+		
+	}
+
+	public Login(String username, String password) {
+		this.username = username;
+		this.password = password;
+		this.fechaYHora = new Date(Instant.now().toEpochMilli());
+	}
+	
+	
 
 }

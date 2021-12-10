@@ -21,5 +21,15 @@ public class EncuestaRepoImpl{
 		return listaEncuestas;
 	}
 	
+	public Encuesta findById(Long id) {
+		try {
+		return er.findById(id).get();
+		
+		} catch(Exception e) {
+			
+			return null;
+		}
+	}
+	
 
 }

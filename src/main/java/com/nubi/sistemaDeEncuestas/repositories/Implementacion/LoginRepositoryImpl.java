@@ -3,6 +3,7 @@ package com.nubi.sistemaDeEncuestas.repositories.Implementacion;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.nubi.sistemaDeEncuestas.model.Login;
+import com.nubi.sistemaDeEncuestas.model.Usuario;
 import com.nubi.sistemaDeEncuestas.repositories.LoginRepository;
 
 public class LoginRepositoryImpl{
@@ -14,6 +15,7 @@ public class LoginRepositoryImpl{
 		
 		try {
 		return lr.findById(username).get();
+		
 		} catch(Exception e) {
 			e.printStackTrace();
 			return null;

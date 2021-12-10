@@ -1,5 +1,6 @@
 package com.nubi.sistemaDeEncuestas.model;
 
+import java.time.Instant;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -9,6 +10,9 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import lombok.Getter;
+
+@Getter
 @Entity
 public class Respuesta {
 	
@@ -24,7 +28,7 @@ public class Respuesta {
 	private Pregunta pregunta;
 	
 	public Respuesta() {
-		
+		this.fechaYHora = new Date(Instant.now().toEpochMilli());
 	}
 
 }

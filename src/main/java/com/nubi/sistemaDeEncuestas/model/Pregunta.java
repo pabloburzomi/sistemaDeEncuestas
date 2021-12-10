@@ -1,6 +1,7 @@
 package com.nubi.sistemaDeEncuestas.model;
 
-import java.util.Date;
+import java.sql.Date;
+import java.time.Instant;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -36,9 +37,18 @@ public class Pregunta {
 	private Encuesta encuesta;
 	
 	
-	
 	public Pregunta() {
-		
+		this.fechaYHora = new Date(Instant.now().toEpochMilli());
 	}
+
+	public Pregunta(String titulo, String cuerpo, Usuario usuario, Encuesta encuesta) {
+		super();
+		this.titulo = titulo;
+		this.cuerpo = cuerpo;
+		this.fechaYHora = new Date(Instant.now().toEpochMilli());
+		this.usuario = usuario;
+		this.encuesta = encuesta;
+	}
+	
 
 }

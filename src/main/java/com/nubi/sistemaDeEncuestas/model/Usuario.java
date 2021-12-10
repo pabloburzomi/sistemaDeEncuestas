@@ -21,6 +21,8 @@ public class Usuario {
 	
 	private String username;
 	
+	private String password;
+	
 	public Usuario() {
 		
 	}
