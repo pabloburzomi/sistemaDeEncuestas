@@ -23,18 +23,18 @@ public class EncuestaRepoImpl {
 	@PersistenceContext
 	private EntityManager em;
 	
-	//guarda una nueva encuesta
+	
 	public void guardarEncuesta(Encuesta e) {
 		er.save(e);
 	}
 	
-	//Devuelve todas las encuestas
+	
 	public List<Encuesta> findAllEncuestas() {
 		List<Encuesta> listaEncuestas = (List<Encuesta>) er.findAll();
 		return listaEncuestas;
 	}
 
-	//Agrupa las encuestas por etiquetas
+	
 	public List<Encuesta> findByEtiqueta(String etiqueta) {
 		
 		List<Encuesta> resBD = new ArrayList<>();
