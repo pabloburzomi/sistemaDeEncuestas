@@ -34,7 +34,7 @@ public class UsuarioController {
 		
 			u.setUsername(username);
 			u.setToken(token);
-			System.out.println(" ENTRA ACA");
+
 			return u;
 		
 		}
