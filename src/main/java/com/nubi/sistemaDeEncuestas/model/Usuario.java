@@ -5,12 +5,15 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 @Getter
 @Setter
+@ToString
 @Entity
 @Table(name = "usuarios")
 public class Usuario {
@@ -23,6 +26,7 @@ public class Usuario {
 	
 	private String password;
 	
+	@Transient
 	private String token;
 	
 	public Usuario() {

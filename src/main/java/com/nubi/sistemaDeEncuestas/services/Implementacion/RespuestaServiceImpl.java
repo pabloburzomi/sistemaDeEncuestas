@@ -19,13 +19,25 @@ public class RespuestaServiceImpl implements RespuestaService{
 	public void addNewRespuesta(Respuesta r) {
 		
 		List<Respuesta> listaRespuestas= pr.findRespuestasByIdPreg(r.getPregunta().getId());
+		
+		listaRespuestas.forEach(System.out::println);
+		
+		if(listaRespuestas != null) {
 			
-		if(listaRespuestas.size() < 4) {
-		pr.addNewRespuesta(r);
+			if(listaRespuestas.size() < 4) {
+				
+				pr.addNewRespuesta(r);
+				
+				}
+			
+				else {
+					
+					System.err.print("No se permiten mas de 4 respuestas para una pregunta");
+					
+				}
+			
 		}
-		else {
-			System.err.print("No se permiten mas de 4 respuestas para una pregunta");
-		}
+		
 		
 	}
 

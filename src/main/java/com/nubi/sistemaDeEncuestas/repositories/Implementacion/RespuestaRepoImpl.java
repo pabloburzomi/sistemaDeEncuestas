@@ -30,11 +30,20 @@ public class RespuestaRepoImpl {
 		
 		List<Respuesta> resBD = new ArrayList<>();
 		
-		Query query = em.createQuery("select r from Respuesta r where r.preguntas = :id");
+		try {
+		
+		Query query = em.createQuery("select r from Respuesta r where r.pregunta = :id");
 		
 		query.setParameter("id", idPregunta);
 		
 		resBD = query.getResultList();
+		
+		
+		} catch(Exception e) {
+			System.err.print( "No existe coincidencia: " + e.getMessage());
+		}
+			
+		
 		
 		return resBD;
 	}

@@ -28,7 +28,7 @@ public class EncuestaServiceImpl implements EncuestaService {
 		er.guardarEncuesta(e);
 	}
 	
-	//Agrupa las encuestas por etiquetas
+	//Devuelve las encuestas por etiquetas
 	@Override
 	public List<Encuesta> getEncuestaByEtiqueta(String etiqueta) {
 		return er.findByEtiqueta(etiqueta);

@@ -2,18 +2,19 @@ package com.nubi.sistemaDeEncuestas.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.nubi.sistemaDeEncuestas.configuration.AppToken;
+//import com.nubi.sistemaDeEncuestas.configuration.AppToken;
 import com.nubi.sistemaDeEncuestas.model.Usuario;
 import com.nubi.sistemaDeEncuestas.services.Implementacion.UsuarioServiceImpl;
 
 @RestController
 public class UsuarioController {
 	
-	@Autowired
-	private AppToken at;
+//	@Autowired
+//	private AppToken at;
 	
 	@Autowired
 	private UsuarioServiceImpl us;
@@ -23,18 +24,24 @@ public class UsuarioController {
 		
 		if(us.isLogin(username, password)) {
 		
-			String token = at.getJWTToken(username);
+			//String token = at.getJWTToken(username);
 			
 			Usuario u = new Usuario();
 			
 			u.setUsername(username);
-			u.setToken(token);
+			//u.setToken(token);
 		
 			return u;
 		
 		}
 		
 		return null;
+	}
+	
+	@PostMapping("/newUsuario")
+	public void newUser(@RequestBody Usuario usuario) {
+		System.out.println("-------- " + usuario);
+		us.addUsuario(usuario);
 	}
 	
 	

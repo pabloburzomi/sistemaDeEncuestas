@@ -16,4 +16,9 @@ public class UsuarioRepoImpl {
 		return ur.findUsuarioByUsername(username);
 	}
 
+	public void save(Usuario usuario) {
+		 this.ur.save(usuario);
+		
+	}
+
 }

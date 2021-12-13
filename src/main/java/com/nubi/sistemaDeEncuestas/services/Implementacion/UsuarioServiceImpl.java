@@ -27,4 +27,9 @@ public class UsuarioServiceImpl implements UsuarioService{
 		return false;
 	}
 
+	public void addUsuario(Usuario usuario) {
+		ur.save(usuario);
+		
+	}
+
 }

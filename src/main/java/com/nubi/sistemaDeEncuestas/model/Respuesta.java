@@ -11,8 +11,10 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 import lombok.Getter;
+import lombok.ToString;
 
 @Getter
+@ToString
 @Entity
 public class Respuesta {
 	

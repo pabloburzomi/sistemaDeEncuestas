@@ -20,6 +20,8 @@ public class RespuestaController {
 	
 	@RequestMapping(path = "/newRespuesta", method = RequestMethod.POST)
 	public void addNewPregunta(@RequestBody Respuesta respuesta) {
+		
+		System.out.println(respuesta + " ---------------");
 		rs.addNewRespuesta(respuesta);
 	}
 	

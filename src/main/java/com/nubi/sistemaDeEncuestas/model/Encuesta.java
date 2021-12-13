@@ -14,9 +14,11 @@ import javax.persistence.Transient;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 @Getter
 @Setter
+@ToString
 @Entity
 @Table(name = "encuestas")
 public class Encuesta {
@@ -36,6 +38,7 @@ public class Encuesta {
 	private List<Pregunta> listaPreguntas;
 	
 	public Encuesta() {
+		this.encuestaVencida = false;
 		this.fechaCreación = new Date(Instant.now().toEpochMilli());
 	}
 
