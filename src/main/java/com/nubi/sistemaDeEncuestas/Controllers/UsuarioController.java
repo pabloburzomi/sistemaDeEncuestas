@@ -1,7 +1,7 @@
 package com.nubi.sistemaDeEncuestas.Controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,7 +18,7 @@ public class UsuarioController {
 	@Autowired
 	private UsuarioServiceImpl us;
 
-	@RequestMapping("/usuario")
+	@PostMapping("/usuario")
 	public Usuario login(@RequestParam("username") String username, @RequestParam("password") String password) {
 		
 		if(us.isLogin(username, password)) {

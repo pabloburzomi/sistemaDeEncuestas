@@ -29,7 +29,8 @@ public class AppToken {
 				.setIssuedAt(new Date(System.currentTimeMillis()))
 				.setExpiration(new Date(System.currentTimeMillis() + 100000))
 				.signWith(SignatureAlgorithm.HS512,
-						secretKey.getBytes()).compact();
+						secretKey.getBytes())
+				.compact();
 
 		return "Bearer " + token;
 	}
