@@ -23,6 +23,8 @@ public class Usuario {
 	
 	private String password;
 	
+	private String token;
+	
 	public Usuario() {
 		
 	}

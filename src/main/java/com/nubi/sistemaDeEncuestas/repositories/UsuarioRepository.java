@@ -8,4 +8,5 @@ import com.nubi.sistemaDeEncuestas.model.Usuario;
 @Repository
 public interface UsuarioRepository extends CrudRepository<Usuario, Long>{
 
+	public Usuario findUsuarioByUsername(String username);
 }
