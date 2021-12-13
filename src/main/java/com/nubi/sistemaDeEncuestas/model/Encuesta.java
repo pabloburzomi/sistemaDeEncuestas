@@ -30,6 +30,8 @@ public class Encuesta {
 	
 	private Etiqueta etiqueta;
 	
+	private boolean encuestaVencida;
+	
 	@Transient
 	private List<Pregunta> listaPreguntas;
 	

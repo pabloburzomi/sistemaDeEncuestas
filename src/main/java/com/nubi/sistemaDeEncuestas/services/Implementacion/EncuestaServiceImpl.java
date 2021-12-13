@@ -1,5 +1,7 @@
 package com.nubi.sistemaDeEncuestas.services.Implementacion;
 
+import java.time.Instant;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,7 +37,18 @@ public class EncuestaServiceImpl implements EncuestaService {
 	//Devuelve todas las encuestas
 	@Override
 	public List<Encuesta> getAllEncuestas() {
-		return er.findAllEncuestas();
+		
+		Date fechaActual = new Date(Instant.now().toEpochMilli());
+		
+		List<Encuesta> listaEncuestas = er.findAllEncuestas();
+		
+//		listaEncuestas.forEach(e -> {
+//			if( (e.getFechaCreación() + 10000000) >= fechaActual ) {
+//				e.setEncuestaVencida(true);
+//			}
+//		});
+		
+		return listaEncuestas;
 	}
 
 }

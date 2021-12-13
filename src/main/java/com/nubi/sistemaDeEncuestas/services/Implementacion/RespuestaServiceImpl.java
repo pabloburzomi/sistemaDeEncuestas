@@ -20,7 +20,7 @@ public class RespuestaServiceImpl implements RespuestaService{
 		
 		List<Respuesta> listaRespuestas= pr.findRespuestasByIdPreg(r.getPregunta().getId());
 			
-		if(listaRespuestas.size() < 5) {
+		if(listaRespuestas.size() < 4) {
 		pr.addNewRespuesta(r);
 		}
 		else {

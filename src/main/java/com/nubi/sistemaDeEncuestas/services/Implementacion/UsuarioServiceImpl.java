@@ -5,13 +5,15 @@ import org.springframework.stereotype.Service;
 
 import com.nubi.sistemaDeEncuestas.model.Usuario;
 import com.nubi.sistemaDeEncuestas.repositories.Implementacion.UsuarioRepoImpl;
+import com.nubi.sistemaDeEncuestas.services.UsuarioService;
 
 @Service
-public class UsuarioServiceImpl {
+public class UsuarioServiceImpl implements UsuarioService{
 	
 	@Autowired
 	private UsuarioRepoImpl ur;
 	
+	@Override
 	public boolean isLogin(String Username, String password) {
 		
 		Usuario u = ur.findUsuarioByUsername(Username);
