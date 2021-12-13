@@ -1,4 +1,4 @@
-package com.nubi.sistemaDeEncuestas.Controllers;
+package com.nubi.sistemaDeEncuestas.controllers;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
