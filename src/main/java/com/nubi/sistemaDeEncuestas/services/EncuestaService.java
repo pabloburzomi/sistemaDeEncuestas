@@ -9,7 +9,7 @@ import com.nubi.sistemaDeEncuestas.model.Encuesta;
 @Service
 public interface EncuestaService{
 	
-	public void addNewEncuesta(Encuesta e);
+	public Encuesta addNewEncuesta(Encuesta e);
 	
 	public List<Encuesta> getAllEncuestas();
 	

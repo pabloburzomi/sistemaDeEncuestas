@@ -16,13 +16,17 @@ public class UsuarioServiceImpl implements UsuarioService{
 	@Override
 	public boolean isLogin(String Username, String password) {
 		
+		try {
+			
 		Usuario u = ur.findUsuarioByUsername(Username);
 		
-		if(u.getUsername() != null && u.getPassword() == password) {
-			
+		if(u.getUsername() != null && u.getPassword().equals(password)) {
+
 			return true;
 			
-		}
+		} 
+		
+		}catch(Exception e) {e.printStackTrace();}
 		
 		return false;
 	}

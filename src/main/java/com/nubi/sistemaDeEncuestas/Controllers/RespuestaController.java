@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.nubi.sistemaDeEncuestas.model.Respuesta;
 import com.nubi.sistemaDeEncuestas.services.Implementacion.RespuestaServiceImpl;
 
-
 @RestController
 @RequestMapping("/respuestas")
 public class RespuestaController {
@@ -20,8 +19,7 @@ public class RespuestaController {
 	
 	@RequestMapping(path = "/newRespuesta", method = RequestMethod.POST)
 	public void addNewPregunta(@RequestBody Respuesta respuesta) {
-		
-		System.out.println(respuesta + " ---------------");
+
 		rs.addNewRespuesta(respuesta);
 	}
 	

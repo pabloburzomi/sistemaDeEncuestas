@@ -25,10 +25,8 @@ public class EncuestaController {
 	}
 	
 	@RequestMapping(path = "/newEncuesta", method = RequestMethod.POST)
-	private void newEncuesta(@RequestBody Encuesta encuesta) {
-		System.out.println("aaaaaaaaaaaaaaaaaaaaaaaaa");
-		System.out.println(encuesta + "***********");
-		es.addNewEncuesta(encuesta);
+	private Encuesta newEncuesta(@RequestBody Encuesta encuesta) {
+		return es.addNewEncuesta(encuesta);
 	}
 	
 	@RequestMapping(path = "/etiqueta/{id}")

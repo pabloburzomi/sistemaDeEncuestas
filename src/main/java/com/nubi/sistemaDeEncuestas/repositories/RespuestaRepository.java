@@ -9,6 +9,5 @@ import com.nubi.sistemaDeEncuestas.model.Respuesta;
 @Repository
 public interface RespuestaRepository extends CrudRepository<Respuesta, Long>{
 
-	//public List<Respuesta> getRespuestas(Long idPregunta);
 
 }

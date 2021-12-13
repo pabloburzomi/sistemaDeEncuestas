@@ -23,9 +23,9 @@ public class EncuestaServiceImpl implements EncuestaService {
 
 	// Guarda una nueva encuesta
 	@Override
-	public void addNewEncuesta(Encuesta e) {
+	public Encuesta addNewEncuesta(Encuesta e) {
 		e.getListaPreguntas().forEach(System.out::println);
-		er.guardarEncuesta(e);
+		return er.guardarEncuesta(e);
 	}
 	
 	//Devuelve las encuestas por etiquetas

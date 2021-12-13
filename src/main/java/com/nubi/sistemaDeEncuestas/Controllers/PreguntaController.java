@@ -22,7 +22,6 @@ public class PreguntaController {
 	
 	@PostMapping(path = "/newPregunta")
 	public void newPregunta(@RequestBody Pregunta pregunta) {
-		System.out.println(pregunta + "--------+++");
 		ps.addNewPregunta(pregunta);
 	}
 	

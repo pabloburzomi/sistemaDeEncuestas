@@ -24,8 +24,8 @@ public class EncuestaRepoImpl {
 	private EntityManager em;
 	
 	
-	public void guardarEncuesta(Encuesta e) {
-		er.save(e);
+	public Encuesta guardarEncuesta(Encuesta e) {
+		return er.save(e);
 	}
 	
 	
