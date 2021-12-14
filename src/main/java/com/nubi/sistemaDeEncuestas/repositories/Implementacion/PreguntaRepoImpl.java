@@ -22,5 +22,9 @@ public class PreguntaRepoImpl{
 	public List<Pregunta> listaPreguntasByUsuario(Long u){
 		return pr.findAllByUsuario(u);
 	}
+
+	public List<Pregunta> findAllPreguntas() {
+		return (List<Pregunta>) pr.findAll();
+	}
 	
 }

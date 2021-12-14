@@ -1,6 +1,7 @@
 package com.nubi.sistemaDeEncuestas.services.Implementacion;
 
 import java.time.Instant;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -8,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.nubi.sistemaDeEncuestas.model.Encuesta;
+import com.nubi.sistemaDeEncuestas.model.Pregunta;
 import com.nubi.sistemaDeEncuestas.repositories.Implementacion.EncuestaRepoImpl;
 import com.nubi.sistemaDeEncuestas.repositories.Implementacion.PreguntaRepoImpl;
 import com.nubi.sistemaDeEncuestas.services.EncuestaService;
@@ -24,7 +26,6 @@ public class EncuestaServiceImpl implements EncuestaService {
 	// Guarda una nueva encuesta
 	@Override
 	public Encuesta addNewEncuesta(Encuesta e) {
-		e.getListaPreguntas().forEach(System.out::println);
 		return er.guardarEncuesta(e);
 	}
 	
@@ -37,17 +38,8 @@ public class EncuestaServiceImpl implements EncuestaService {
 	//Devuelve todas las encuestas
 	@Override
 	public List<Encuesta> getAllEncuestas() {
-		
-		Date fechaActual = new Date(Instant.now().toEpochMilli());
-		
+
 		List<Encuesta> listaEncuestas = er.findAllEncuestas();
-		
-//		listaEncuestas.forEach(e -> {
-//			if( (e.getFechaCreación() + 10000000) >= fechaActual ) {
-//				e.setEncuestaVencida(true);
-//			}
-//		});
-		
 		return listaEncuestas;
 	}
 
