@@ -32,7 +32,5 @@ class SistemaDeEncuestasApplicationTests {
 	void testGetAllEncuestas() {
 		assertFalse(es.getAllEncuestas().isEmpty());
 	}
-	
-	
 
 }

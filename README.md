@@ -4,6 +4,8 @@
  
 # Modo de ejecución:
 
+Advertencia: Se necesita tener instalado Lombok en el IDE para que haga uso de la dependencia Lombok. (Se quita y se usa Getters Setters ToString en caso de ser necesario - A modificar)
+
 Crear una base de datos en MySQL 8 llamada "encuestas"
 
 En una consola de comandos, entrar al directorio donde se encuentra el proyecto.
