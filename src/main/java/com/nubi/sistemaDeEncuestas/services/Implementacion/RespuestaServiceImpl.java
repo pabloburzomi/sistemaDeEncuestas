@@ -20,8 +20,6 @@ public class RespuestaServiceImpl implements RespuestaService{
 		
 		List<Respuesta> listaRespuestas= pr.findRespuestasByIdPreg(r.getPregunta().getId());
 		
-		listaRespuestas.forEach(System.out::println);
-		
 		if(listaRespuestas != null) {
 			
 			if(listaRespuestas.size() < 4) {

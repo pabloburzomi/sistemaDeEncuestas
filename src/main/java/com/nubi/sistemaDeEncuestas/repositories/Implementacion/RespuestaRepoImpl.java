@@ -32,7 +32,7 @@ public class RespuestaRepoImpl {
 		
 		try {
 		
-		Query query = em.createQuery("select r from Respuesta r where r.pregunta = :id");
+		Query query = em.createQuery("select r from Respuesta r where r.pregunta.id = :id");
 		
 		query.setParameter("id", idPregunta);
 		
