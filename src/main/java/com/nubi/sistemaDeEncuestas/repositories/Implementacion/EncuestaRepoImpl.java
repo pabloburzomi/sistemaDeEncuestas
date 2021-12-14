@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.nubi.sistemaDeEncuestas.model.Encuesta;
+import com.nubi.sistemaDeEncuestas.model.Etiqueta;
 import com.nubi.sistemaDeEncuestas.model.Respuesta;
 import com.nubi.sistemaDeEncuestas.repositories.EncuestaRepository;
 
@@ -35,7 +36,7 @@ public class EncuestaRepoImpl {
 	}
 
 	
-	public List<Encuesta> findByEtiqueta(String etiqueta) {
+	public List<Encuesta> findByEtiqueta(Etiqueta etiqueta) {
 		
 		List<Encuesta> resBD = new ArrayList<>();
 

@@ -46,5 +46,6 @@ class SistemaDeEncuestasApplicationTests {
 		es.addNewEncuesta(e);
 		assertFalse(es.getAllEncuestas().isEmpty());
 	}
+	
 
 }

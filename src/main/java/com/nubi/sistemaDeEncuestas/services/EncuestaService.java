@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.nubi.sistemaDeEncuestas.model.Encuesta;
+import com.nubi.sistemaDeEncuestas.model.Etiqueta;
 
 @Service
 public interface EncuestaService{
@@ -13,6 +14,6 @@ public interface EncuestaService{
 	
 	public List<Encuesta> getAllEncuestas();
 	
-	public List<Encuesta> getEncuestaByEtiqueta(String etiqueta);
+	public List<Encuesta> getEncuestaByEtiqueta(Etiqueta etiqueta);
 	
 }

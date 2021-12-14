@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.nubi.sistemaDeEncuestas.model.Encuesta;
+import com.nubi.sistemaDeEncuestas.model.Etiqueta;
 import com.nubi.sistemaDeEncuestas.services.Implementacion.EncuestaServiceImpl;
 
 @RestController
@@ -29,9 +30,23 @@ public class EncuestaController {
 		return es.addNewEncuesta(encuesta);
 	}
 	
-	@RequestMapping(path = "/etiqueta/{id}")
-	private List<Encuesta> getEncuestaByEtiqueta(@PathVariable String id){
-		return es.getEncuestaByEtiqueta(id);
+	@RequestMapping(path = "/etiqueta/{etiqueta}")
+	private List<Encuesta> getEncuestaByEtiqueta(@PathVariable String etiqueta){
+
+		switch(etiqueta.toLowerCase()) {
+			case "arte": 
+				return es.getEncuestaByEtiqueta(Etiqueta.ARTE);
+			case "cultura":
+				return es.getEncuestaByEtiqueta(Etiqueta.CULTURA);
+			case "deporte":
+				return es.getEncuestaByEtiqueta(Etiqueta.DEPORTE);
+			case "humor":
+				return es.getEncuestaByEtiqueta(Etiqueta.HUMOR);
+			default:
+				System.err.println("Etiqueta incorrecta");
+				return null;
+		}
+		
 	}
 
 }

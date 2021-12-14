@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.nubi.sistemaDeEncuestas.model.Encuesta;
+import com.nubi.sistemaDeEncuestas.model.Etiqueta;
 import com.nubi.sistemaDeEncuestas.model.Pregunta;
 import com.nubi.sistemaDeEncuestas.repositories.Implementacion.EncuestaRepoImpl;
 import com.nubi.sistemaDeEncuestas.repositories.Implementacion.PreguntaRepoImpl;
@@ -31,8 +32,8 @@ public class EncuestaServiceImpl implements EncuestaService {
 	
 	//Devuelve las encuestas por etiquetas
 	@Override
-	public List<Encuesta> getEncuestaByEtiqueta(String etiqueta) {
-		return er.findByEtiqueta(etiqueta);
+	public List<Encuesta> getEncuestaByEtiqueta(Etiqueta e) {
+		return er.findByEtiqueta(e);
 	}
 
 	//Devuelve todas las encuestas
