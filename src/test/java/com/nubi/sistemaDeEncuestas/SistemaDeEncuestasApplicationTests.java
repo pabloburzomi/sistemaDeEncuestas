@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import com.nubi.sistemaDeEncuestas.model.Encuesta;
+import com.nubi.sistemaDeEncuestas.model.Etiqueta;
 import com.nubi.sistemaDeEncuestas.model.Pregunta;
 import com.nubi.sistemaDeEncuestas.model.Usuario;
 import com.nubi.sistemaDeEncuestas.services.Implementacion.EncuestaServiceImpl;
@@ -45,6 +46,16 @@ class SistemaDeEncuestasApplicationTests {
 		Encuesta e = new Encuesta();
 		es.addNewEncuesta(e);
 		assertFalse(es.getAllEncuestas().isEmpty());
+	}
+	
+	@Test
+	void testGetEncuestaByEtiqueta() {
+		Encuesta e = new Encuesta();
+		e.setEtiqueta(Etiqueta.CULTURA);
+		
+		es.addNewEncuesta(e);
+		
+		assertTrue(es.getEncuestaByEtiqueta(Etiqueta.CULTURA).get(0).getEtiqueta().equals(Etiqueta.CULTURA));
 	}
 	
 
