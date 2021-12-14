@@ -42,9 +42,10 @@ public class UsuarioController {
 		return null;
 	}
 	
+	
+	//Solamente de prueba para guardar usuarios
 	@PostMapping("/newUsuario")
 	public void newUser(@RequestBody Usuario usuario) {
-		System.out.println(usuario.getUsername() + " _________ " + usuario.getPassword());
 		us.addUsuario(usuario);
 	}
 	
