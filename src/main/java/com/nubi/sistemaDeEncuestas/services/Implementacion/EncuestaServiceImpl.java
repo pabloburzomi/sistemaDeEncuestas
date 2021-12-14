@@ -27,6 +27,10 @@ public class EncuestaServiceImpl implements EncuestaService {
 	// Guarda una nueva encuesta
 	@Override
 	public Encuesta addNewEncuesta(Encuesta e) {
+
+		//Guarda todas las preguntas que vienen en la encuesta
+		e.getListaPreguntas().forEach(p -> pr.addNewPregunta(p));
+		
 		return er.guardarEncuesta(e);
 	}
 	
