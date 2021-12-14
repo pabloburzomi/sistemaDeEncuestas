@@ -43,8 +43,6 @@ public class RespuestaRepoImpl {
 			System.err.print( "No existe coincidencia: " + e.getMessage());
 		}
 			
-		
-		
 		return resBD;
 	}
 

@@ -21,9 +21,7 @@ public class UsuarioServiceImpl implements UsuarioService{
 		Usuario u = ur.findUsuarioByUsername(Username);
 		
 		if(u.getUsername() != null && u.getPassword().equals(password)) {
-
 			return true;
-			
 		} 
 		
 		}catch(Exception e) {e.printStackTrace();}
@@ -33,7 +31,6 @@ public class UsuarioServiceImpl implements UsuarioService{
 
 	public void addUsuario(Usuario usuario) {
 		ur.save(usuario);
-		
 	}
 
 }
