@@ -40,6 +40,7 @@ class SistemaDeEncuestasApplicationTests {
 		assertTrue(ps.getPreguntaByUsuario(1l).get(0).getTitulo().equalsIgnoreCase("esto es una pregunta"));
 	}
 	
+	@Test
 	void testGetAllEncuestas() {
 		Encuesta e = new Encuesta();
 		es.addNewEncuesta(e);
