@@ -41,6 +41,8 @@ class SistemaDeEncuestasApplicationTests {
 	}
 	
 	void testGetAllEncuestas() {
+		Encuesta e = new Encuesta();
+		es.addNewEncuesta(e);
 		assertFalse(es.getAllEncuestas().isEmpty());
 	}
 
