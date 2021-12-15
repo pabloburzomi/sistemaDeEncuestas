@@ -51,8 +51,9 @@ public class EncuestaRepoImpl {
 
 
 	public void vencerEncuesta(Encuesta e) {	
-		er.findById(e.getId());
-		er.save(e);
+		Encuesta encuestasAux = er.findById(e.getId()).get();
+		encuestasAux.setEncuestaVencida(true);
+		er.save(encuestasAux);
 	}
 
 }
