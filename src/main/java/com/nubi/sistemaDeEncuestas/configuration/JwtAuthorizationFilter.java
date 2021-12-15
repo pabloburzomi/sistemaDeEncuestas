@@ -55,7 +55,8 @@ public class JwtAuthorizationFilter extends OncePerRequestFilter {
 	//Se añade la configuración necesaria para autorizar la petición
 	private void setUpSpringAuthentication(Claims claims) {
 		
-		List<String> authorities = (List) claims.get("authorities");
+		@SuppressWarnings("unchecked")
+		List<String> authorities = (List<String>) claims.get("authorities");
 		
 		//El GrantedAuthority se incluyó en el token durante la autenticación
 		UsernamePasswordAuthenticationToken auth = new UsernamePasswordAuthenticationToken(
