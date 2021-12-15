@@ -1,0 +1,192 @@
+{
+	"info": {
+		"_postman_id": "7708918b-0c11-4808-8aa8-6d3b8254e3fe",
+		"name": "sistemaEncuestas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "postEncuesta",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJlbmN1ZXN0YXMiLCJzdWIiOiJwZXBlIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTYzOTUwNzEyOCwiZXhwIjoxNjM5NTA3MjI4fQ.gWQWPdkASTk9NLa0mr-EU_7eSbNFoDxt4LmZ7fJK_Bz3EXsiDO5ZsiqDXent4mCvHuLvY-1S2nbABOSkvNS2ew",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"listaPreguntas\": [\r\n                        { \r\n                            \"titulo\" :\"esto es una pregunta12\",\r\n                            \"cuerpo\": \"Este es el cuerpo de la pregunta12\",\r\n                            \"usuarios\": {\r\n                                    \"id\": 2\r\n                                },\r\n                            \"encuestas\":{\r\n                                \"id\":1\r\n                            }\r\n                        },\r\n                        { \r\n                            \"titulo\" :\"esto es una pregunta13\",\r\n                            \"cuerpo\": \"Este es el cuerpo de la pregunta13\",\r\n                            \"usuarios\": 2,\r\n                            \"encuestas\":1\r\n                        }\r\n                        ],\r\n    \"etiqueta\": \"CULTURA\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/encuestas/newEncuesta",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"encuestas",
+						"newEncuesta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "respuestaPost",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cuerpo\": \"este es el cuerpo de la respuesta1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/respuestas/newRespuesta",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"respuestas",
+						"newRespuesta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "postUsuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"pepe\",\r\n    \"password\": \"12345\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/usuarios/newUsuario\"",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuarios",
+						"newUsuario\""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "postPregunta",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"titulo\" :\"esto es una pregunta\",\r\n    \"cuerpo\": \"Este es el cuerpo de la pregunta\",\r\n    \"usuario\": 1,\r\n    \"encuesta\":1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "postPregunta",
+					"host": [
+						"postPregunta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PostUsuarioLogin",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		},
+		{
+			"name": "getAllEncuestas",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJlbmN1ZXN0YXMiLCJzdWIiOiJwYWJsbyIsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE2Mzk0ODQxNjYsImV4cCI6MTYzOTQ4NDI2Nn0.UzDde87orCFSMdPinTALSuTqSSpBN6I05tYWmcjPl6bF3NRKceXM6BbZvEOb2NyREb0RL0s1YWDACJ1D5dASDQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/encuestas/all",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"encuestas",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getPreguntasByUsuario",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/preguntas/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"preguntas",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getEncuestaByEtiqueta",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		}
+	]
+}
