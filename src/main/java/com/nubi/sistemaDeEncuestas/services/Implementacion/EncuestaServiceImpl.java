@@ -1,8 +1,5 @@
 package com.nubi.sistemaDeEncuestas.services.Implementacion;
 
-import java.time.Instant;
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +7,6 @@ import org.springframework.stereotype.Service;
 
 import com.nubi.sistemaDeEncuestas.model.Encuesta;
 import com.nubi.sistemaDeEncuestas.model.Etiqueta;
-import com.nubi.sistemaDeEncuestas.model.Pregunta;
 import com.nubi.sistemaDeEncuestas.repositories.Implementacion.EncuestaRepoImpl;
 import com.nubi.sistemaDeEncuestas.repositories.Implementacion.PreguntaRepoImpl;
 import com.nubi.sistemaDeEncuestas.services.EncuestaService;
