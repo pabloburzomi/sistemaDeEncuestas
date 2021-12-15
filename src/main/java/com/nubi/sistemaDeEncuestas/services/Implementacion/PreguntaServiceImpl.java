@@ -23,8 +23,7 @@ public class PreguntaServiceImpl implements PreguntaService {
 	@Autowired
 	private PreguntaRepoImpl pr;
 	
-	@PersistenceContext
-	private EntityManager em;
+
 	
 
 	@Override
@@ -36,16 +35,8 @@ public class PreguntaServiceImpl implements PreguntaService {
 	@Override
 	public List<Pregunta> getPreguntaByUsuario(Long u) {
 		
+		return pr.getPreguntaByUsuario(u);
 		
-		List<Pregunta> resBD = new ArrayList<>();
-
-		Query query = em.createQuery("select p from Pregunta p where p.usuario.id = :usuario");
-
-		query.setParameter("usuario", u);
-
-		resBD = query.getResultList();
-
-		return resBD;
 	}
 	
 }
