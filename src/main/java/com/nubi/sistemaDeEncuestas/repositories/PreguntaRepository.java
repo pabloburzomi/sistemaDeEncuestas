@@ -10,6 +10,5 @@ import com.nubi.sistemaDeEncuestas.model.Pregunta;
 @Repository
 public interface PreguntaRepository extends CrudRepository<Pregunta, Long>{
 	
-	public List<Pregunta> findAllByUsuario(Long id);
 
 }
