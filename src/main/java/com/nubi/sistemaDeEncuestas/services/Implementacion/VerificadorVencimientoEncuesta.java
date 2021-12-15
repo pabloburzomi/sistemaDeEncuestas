@@ -34,7 +34,7 @@ public class VerificadorVencimientoEncuesta {
 				//Fecha de expiración luego de 10 días de su creación
 				long dateAux = e.getFechaCreación().getTime() + 864000000 ;
 				
-				if (dateAux > dateHoy) {
+				if (dateAux < dateHoy) {
 					es.vencerEncuesta(e);
 				}
 			});
