@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+
+	sistemaDeEncuestas-mysql:
+		image: mysql:8.0
+		enviroment:
+			- MYSQL_ROOT_PASSWORD=
+			- MYSQL_DATABASE=encuestas
+			- MYSQL_USER=root
+			-MYSQL_PASSWORD=1234
+		ports:
+			- 3306:3306
+		volumes:
+			- /home/pablo/Documents/encuestas/bd_spring_docker:/var/lib/mysql
+	
+	sistemaDeEncuestas-main:
+		image: encuestas/spring_docker:2.0
+		restart: on-failure
+		depends_on:
+			- sistemaDeEncuestas-mysql
+		ports:
+			- 8080:8080
+		enviroment:
+			- DATABASE_HOST=sistemaDeEncuestas-mysql
+			- DATABASE_USER=root
+			- DATABASE_PASSWORD=mysql
+			- DATABASE_NAME:encuestas
+			- DATABASE_PORT=3306
+			
