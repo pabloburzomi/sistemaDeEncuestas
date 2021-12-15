@@ -25,12 +25,16 @@ public class VerificadorVencimientoEncuesta {
 
 		for (;;) {
 
-			date = new Date(Instant.now().toEpochMilli());
-
+			long dateHoy = new Date(Instant.now().toEpochMilli()).getTime();
+	
 			List<Encuesta> listaEncuestas = es.getAllEncuestas();
 
 			listaEncuestas.stream().forEach(e -> {
-				if (e.getFechaCreación().after(date)) {
+				
+				//Fecha de expiración luego de 10 días de su creación
+				long dateAux = e.getFechaCreación().getTime() + 864000000 ;
+				
+				if (dateAux > dateHoy) {
 					es.vencerEncuesta(e);
 				}
 			});
