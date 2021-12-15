@@ -52,7 +52,7 @@ public class EncuestaRepoImpl {
 
 	public void vencerEncuesta(Encuesta e) {
 		
-		Query query = em.createQuery("update Encuesta e set e.encuesta_vencida = :vencida");
+		Query query = em.createQuery("update Encuesta e set e.encuestaVencida = :vencida");
 		query.setParameter("vencida", true);
 		
 	}

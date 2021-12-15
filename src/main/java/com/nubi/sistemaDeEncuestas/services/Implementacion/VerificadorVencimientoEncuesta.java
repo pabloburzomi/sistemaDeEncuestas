@@ -17,7 +17,7 @@ public class VerificadorVencimientoEncuesta {
 
 	private Date date;
 
-	public void VerificadorVencimientoEncuesta() {
+	public VerificadorVencimientoEncuesta() {
 
 	}
 
