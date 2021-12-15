@@ -12,13 +12,6 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
-
-@Getter
-@Setter
-@ToString
 @Entity
 @Table(name = "encuestas")
 public class Encuesta {
@@ -41,5 +34,47 @@ public class Encuesta {
 		this.encuestaVencida = false;
 		this.fechaCreación = new Date(Instant.now().toEpochMilli());
 	}
+
+	public Date getFechaCreación() {
+		return fechaCreación;
+	}
+
+	public void setFechaCreación(Date fechaCreación) {
+		this.fechaCreación = fechaCreación;
+	}
+
+	public Etiqueta getEtiqueta() {
+		return etiqueta;
+	}
+
+	public void setEtiqueta(Etiqueta etiqueta) {
+		this.etiqueta = etiqueta;
+	}
+
+	public boolean isEncuestaVencida() {
+		return encuestaVencida;
+	}
+
+	public void setEncuestaVencida(boolean encuestaVencida) {
+		this.encuestaVencida = encuestaVencida;
+	}
+
+	public List<Pregunta> getListaPreguntas() {
+		return listaPreguntas;
+	}
+
+	public void setListaPreguntas(List<Pregunta> listaPreguntas) {
+		this.listaPreguntas = listaPreguntas;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+	
+	
 
 }

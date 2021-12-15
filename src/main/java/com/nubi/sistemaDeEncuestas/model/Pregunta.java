@@ -11,13 +11,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
-
-@Getter
-@Setter
-@ToString
 @Entity
 @Table(name = "preguntas")
 public class Pregunta {
@@ -51,5 +44,55 @@ public class Pregunta {
 		this.usuario = usuario;
 		this.encuesta = encuesta;
 	}
+	
+	
+
+	@Override
+	public String toString() {
+		return "Pregunta [titulo=" + titulo + ", cuerpo=" + cuerpo + ", fechaYHora=" + fechaYHora + ", usuario="
+				+ usuario + ", encuesta=" + encuesta + "]";
+	}
+
+	public String getTitulo() {
+		return titulo;
+	}
+
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
+
+	public String getCuerpo() {
+		return cuerpo;
+	}
+
+	public void setCuerpo(String cuerpo) {
+		this.cuerpo = cuerpo;
+	}
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+
+	public Encuesta getEncuesta() {
+		return encuesta;
+	}
+
+	public void setEncuesta(Encuesta encuesta) {
+		this.encuesta = encuesta;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public Date getFechaYHora() {
+		return fechaYHora;
+	}
+	
+	
 
 }

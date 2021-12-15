@@ -28,19 +28,21 @@ public class EncuestaServiceImpl implements EncuestaService {
 	@Override
 	public Encuesta addNewEncuesta(Encuesta e) {
 
-		//Guarda todas las preguntas que vienen en la encuesta
-		e.getListaPreguntas().forEach(p -> pr.addNewPregunta(p));
-		
+		if (e.getListaPreguntas() != null) {
+			// Guarda todas las preguntas que vienen en la encuesta
+			e.getListaPreguntas().forEach(p -> pr.addNewPregunta(p));
+		}
+
 		return er.guardarEncuesta(e);
 	}
-	
-	//Devuelve las encuestas por etiquetas
+
+	// Devuelve las encuestas por etiquetas
 	@Override
 	public List<Encuesta> getEncuestaByEtiqueta(Etiqueta e) {
 		return er.findByEtiqueta(e);
 	}
 
-	//Devuelve todas las encuestas
+	// Devuelve todas las encuestas
 	@Override
 	public List<Encuesta> getAllEncuestas() {
 

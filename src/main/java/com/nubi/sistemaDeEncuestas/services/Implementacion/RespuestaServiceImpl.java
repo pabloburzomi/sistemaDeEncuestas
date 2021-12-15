@@ -24,7 +24,6 @@ public class RespuestaServiceImpl implements RespuestaService{
 		if(listaRespuestas != null && listaRespuestas.size() < 4) pr.addNewRespuesta(r);
 
 		else  System.err.print("No se permiten mas de 4 respuestas para una pregunta");
-					
 
 	}
 

@@ -10,11 +10,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
-import lombok.Getter;
-import lombok.ToString;
-
-@Getter
-@ToString
 @Entity
 public class Respuesta {
 	
@@ -32,5 +27,45 @@ public class Respuesta {
 	public Respuesta() {
 		this.fechaYHora = new Date(Instant.now().toEpochMilli());
 	}
+	
+	
+
+	@Override
+	public String toString() {
+		return "Respuesta [id=" + id + ", cuerpo=" + cuerpo + ", fechaYHora=" + fechaYHora + ", pregunta=" + pregunta
+				+ "]";
+	}
+
+
+
+	public String getCuerpo() {
+		return cuerpo;
+	}
+
+	public void setCuerpo(String cuerpo) {
+		this.cuerpo = cuerpo;
+	}
+
+	public Date getFechaYHora() {
+		return fechaYHora;
+	}
+
+	public void setFechaYHora(Date fechaYHora) {
+		this.fechaYHora = fechaYHora;
+	}
+
+	public Pregunta getPregunta() {
+		return pregunta;
+	}
+
+	public void setPregunta(Pregunta pregunta) {
+		this.pregunta = pregunta;
+	}
+
+	public Long getId() {
+		return id;
+	}
+	
+	
 
 }
