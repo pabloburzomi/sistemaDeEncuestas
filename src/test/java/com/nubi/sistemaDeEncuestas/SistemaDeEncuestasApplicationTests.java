@@ -73,7 +73,7 @@ class SistemaDeEncuestasApplicationTests {
 	void testVencerEncuesta() {
 		Encuesta e2 = new Encuesta();
 		es.addNewEncuesta(e2);
-		
+		e2.setId(1l);
 		es.vencerEncuesta(e2);
 	}
 	
