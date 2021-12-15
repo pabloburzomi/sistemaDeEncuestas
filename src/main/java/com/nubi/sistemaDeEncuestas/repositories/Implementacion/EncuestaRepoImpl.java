@@ -49,4 +49,12 @@ public class EncuestaRepoImpl {
 		return resBD;
 	}
 
+
+	public void vencerEncuesta(Encuesta e) {
+		
+		Query query = em.createQuery("update Encuesta e set e.encuesta_vencida = :vencida");
+		query.setParameter("vencida", true);
+		
+	}
+
 }

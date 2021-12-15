@@ -50,4 +50,9 @@ public class EncuestaServiceImpl implements EncuestaService {
 		return listaEncuestas;
 	}
 
+	public void vencerEncuesta(Encuesta e) {
+		er.vencerEncuesta(e);
+		
+	}
+
 }
