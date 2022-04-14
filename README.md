@@ -15,7 +15,3 @@ En la raiz principal del directorio del proyecto ejecutar $mvn clean install
 Ejecutar  $java -jar target\sistemaDeEncuestas-0.0.1-SNAPSHOT.war
 
 NOTA: en \src\main\resources se encuentra el archivo sistemaEncuestas.postman_collection.json que es el resultado de algunos de los tests realizados desde postman a los endopoints de la aplicación
-
-# Lo más desafiante:
-
-Considero que lo más desafiante fue el diseño del sistema, y el desarrollo de la seguridad para el login de usuarios.
