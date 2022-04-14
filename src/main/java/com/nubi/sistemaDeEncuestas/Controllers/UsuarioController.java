@@ -1,4 +1,4 @@
-package com.nubi.sistemaDeEncuestas.controllers;
+package com.nubi.sistemaDeEncuestas.Controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;

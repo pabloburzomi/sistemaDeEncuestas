@@ -1,4 +1,4 @@
-package com.nubi.sistemaDeEncuestas.controllers;
+package com.nubi.sistemaDeEncuestas.Controllers;
 
 import java.util.List;
 
