@@ -1,16 +1,5 @@
-FROM maven:3.8.3-openjdk:11-jdk-alpine AS build
+FROM openjdk:8
 
-COPY src /home/sistemaDeEncuestas/src
+COPY ./target/sistemaDeEncuestas-0.0.1-SNAPSHOT.war sistemaDeEncuestas-0.0.1-SNAPSHOT.war
 
-copy pom.xml /home/sistemaDeEncuestas
-
-RUN mvn -f /home/sistemaDeEncuestas/pom.xml clean package
-
-
-FROM openjdk:11-alpine
-
-COPY --from=build "home/sistemaDeEncuestas/target/sistemaDeEncuestas-0.0.1-SNAPSHOT.war"
-
-EXPOSE 8080
-
-ENTRYPOINT ["java", "-jar", "\sistemaDeEncuestas-0.0.1-SNAPSHOT.war"]
+CMD ["java","-jar","sistemaDeEncuestas-0.0.1-SNAPSHOT.war"]
